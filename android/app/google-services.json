@@ -1,0 +1,90 @@
+{
+  "project_info": {
+    "project_number": "387912745201",
+    "project_id": "foodhub-f4c39",
+    "storage_bucket": "foodhub-f4c39.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:387912745201:android:bd1c9939f75fce42f2e950",
+        "android_client_info": {
+          "package_name": "com.example.food_hub"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "387912745201-31ngpfqqkkro6apk7uo48vshiijvg853.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.food_hub",
+            "certificate_hash": "03696b606116cc1f21ef8ef75f393dc109936148"
+          }
+        },
+        {
+          "client_id": "387912745201-chokjol088rdgrjom0olrosk4dob3t9h.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCqJj196_-aWabKOb9jMQAFT5GkIfXI7EU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "387912745201-chokjol088rdgrjom0olrosk4dob3t9h.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "387912745201-6lu5uq88v49dc491skofq71fogj0478p.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.foodHub"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:387912745201:android:4c851891c2f60b73f2e950",
+        "android_client_info": {
+          "package_name": "com.example.food_hub_dev"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "387912745201-chokjol088rdgrjom0olrosk4dob3t9h.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCqJj196_-aWabKOb9jMQAFT5GkIfXI7EU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "387912745201-chokjol088rdgrjom0olrosk4dob3t9h.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "387912745201-6lu5uq88v49dc491skofq71fogj0478p.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.foodHub"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

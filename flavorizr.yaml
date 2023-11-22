@@ -1,0 +1,31 @@
+app:
+  android:
+    flavorDimensions: "flavor-type"
+
+flavors:
+  dev:
+    app:
+      name: "FoodHub-Dev"
+
+    android:
+      applicationId: "com.example.food_hub_dev"
+      icon: "assets/images/logo.png"
+    ios:
+      bundleId: "com.example.food_hub_dev"
+      icon: "assets/images/logo.png"
+    macos:
+      bundleId: "com.example.food_hub_dev"
+
+  prod:
+    app:
+      name: "FoodHub-Prod"
+
+    android:
+      applicationId: "com.example.food_hub_prod"
+      icon: "assets/images/logo.png"
+    ios:
+      bundleId: "com.example.food_hub_prod"
+      icon: "assets/images/logo.png"
+    macos:
+      bundleId: "com.example.food_hub_prod"
+ide: "vscode"
