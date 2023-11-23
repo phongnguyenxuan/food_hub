@@ -16,6 +16,7 @@ import 'package:food_hub/services/firebase_message.dart';
 import 'configs/basic_config.dart';
 import 'configs/constant_varible.dart';
 import 'generated/l10n.dart';
+
 FutureOr<void> main() async {
   WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
@@ -62,10 +63,6 @@ class MainApp extends ConsumerStatefulWidget {
 }
 
 class _MainAppState extends ConsumerState<MainApp> {
-  @override
-  void initState() {
-    super.initState();
-  }
 
   @override
   Widget build(BuildContext context) {
