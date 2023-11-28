@@ -5,7 +5,6 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:food_hub/Screens/forgot_password.dart';
 import 'package:food_hub/configs/constant_varible.dart';
-import 'package:food_hub/configs/style.dart';
 import 'package:food_hub/controller/api_controller.dart';
 import 'package:food_hub/provider/firebae_provider.dart';
 import 'package:food_hub/router/app_router.gr.dart';
@@ -13,6 +12,8 @@ import 'package:food_hub/widgets/custom_button.dart';
 import 'package:food_hub/widgets/custom_textfield.dart';
 import 'package:food_hub/widgets/facebook_button.dart';
 import 'package:food_hub/widgets/google_button.dart';
+import 'package:style/default_color.dart';
+import 'package:style/default_text_style.dart';
 
 @RoutePage()
 class LoginScreen extends ConsumerStatefulWidget {
@@ -42,10 +43,10 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: kWhiteColor,
+      backgroundColor: DefaultColors.whiteColor,
       appBar: AppBar(
         automaticallyImplyLeading: false,
-        backgroundColor: kWhiteColor,
+        backgroundColor: DefaultColors.whiteColor,
         elevation: 0,
         flexibleSpace: Stack(
           children: [
@@ -65,19 +66,19 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                 onTap: () {
                   Navigator.pop(context);
                 },
-                color: kWhiteColor,
+                color: DefaultColors.whiteColor,
                 padding: const EdgeInsets.all(10),
                 radius: 15,
                 boxShadow: const [
                   BoxShadow(
-                    color: kWhiteShadowColor,
+                    color: DefaultColors.whiteShadowColor,
                     blurRadius: 2,
                     spreadRadius: 2,
                   ),
                 ],
                 child: const Icon(
                   Icons.arrow_back_ios_rounded,
-                  color: kBlackColor,
+                  color: DefaultColors.blackColor,
                 ),
               ),
             ),
@@ -99,7 +100,7 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                   ),
                   Text(
                     trans.signIn,
-                    style: titleTextStyle,
+                    style: DefaultTextStyles.titleTextStyle,
                   ),
                   SizedBox(
                     height: 30.h,
@@ -144,7 +145,7 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                           trans.forgot,
                           style: TextStyle(
                               fontFamily: fontFamily,
-                              color: kPrimaryColor,
+                              color: DefaultColors.primaryColor,
                               fontSize: 14.sp,
                               fontWeight: FontWeight.w400),
                         ),
@@ -162,12 +163,12 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                               mailController.text, passwordController.text);
                         }
                       },
-                      color: kPrimaryColor,
+                      color: DefaultColors.primaryColor,
                       radius: 30,
                       padding: EdgeInsets.symmetric(vertical: 25.h),
                       boxShadow: const [
                         BoxShadow(
-                            color: kGreyShadowColor,
+                            color: DefaultColors.greyShadowColor,
                             blurRadius: 20,
                             offset: Offset(0, 10))
                       ],
@@ -178,7 +179,7 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                               fontSize: 15.sp,
                               fontFamily: fontFamily,
                               letterSpacing: 1.2.sp,
-                              color: kWhiteColor,
+                              color: DefaultColors.whiteColor,
                               fontWeight: FontWeight.w600),
                         ),
                       ),
@@ -187,7 +188,7 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                   RichText(
                     text: TextSpan(
                         text: "${trans.dontHave} ",
-                        style: haveAccTextStyle,
+                        style: DefaultTextStyles.haveAccTextStyle,
                         children: [
                           TextSpan(
                             text: trans.signUp,
@@ -197,7 +198,7 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                               },
                             style: TextStyle(
                                 fontFamily: fontFamily,
-                                color: kPrimaryColor,
+                                color: DefaultColors.primaryColor,
                                 fontSize: 14.sp,
                                 fontWeight: FontWeight.w500),
                           )
@@ -213,14 +214,14 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                       Container(
                         width: 84.w,
                         height: 1,
-                        color: kDividerBlackColor,
+                        color: DefaultColors.dividerBlackColor,
                       ),
                       Padding(
                         padding: EdgeInsets.symmetric(horizontal: 17.w),
                         child: Text(
                           trans.signinWith,
                           style: TextStyle(
-                              color: kTextBlack50Color,
+                              color: DefaultColors.textBlack50Color,
                               fontFamily: fontFamily,
                               fontWeight: FontWeight.w500,
                               fontSize: 14.sp),
@@ -229,7 +230,7 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                       Container(
                         width: 84.w,
                         height: 1,
-                        color: kDividerBlackColor,
+                        color: DefaultColors.dividerBlackColor,
                       ),
                     ],
                   ),

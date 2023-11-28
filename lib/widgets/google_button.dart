@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../configs/style.dart';
+import 'package:style/default_color.dart';
+import 'package:style/default_text_style.dart';
 import '../controller/auth_controller.dart';
 import '../provider/firebae_provider.dart';
 
@@ -17,9 +18,9 @@ class GoogleButton extends StatelessWidget {
         authStateChange(context);
       },
       style: ButtonStyle(
-        backgroundColor: const MaterialStatePropertyAll(kWhiteColor),
+        backgroundColor: const MaterialStatePropertyAll(DefaultColors.whiteColor),
         padding: const MaterialStatePropertyAll(EdgeInsets.all(13)),
-        shadowColor: const MaterialStatePropertyAll(kWhiteShadowColor),
+        shadowColor: const MaterialStatePropertyAll(DefaultColors.whiteShadowColor),
         shape: MaterialStatePropertyAll(
             RoundedRectangleBorder(borderRadius: BorderRadius.circular(27))),
       ),
@@ -37,9 +38,9 @@ class GoogleButton extends StatelessWidget {
           SizedBox(
             width: 8.w,
           ),
-          Text(
+          const Text(
             "GOOGLE",
-            style: googleTextStyle,
+            style: DefaultTextStyles.googleTextStyle,
           ),
         ],
       ),

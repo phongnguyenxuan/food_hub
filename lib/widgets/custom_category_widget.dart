@@ -2,8 +2,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:food_hub/configs/constant_varible.dart';
-import 'package:food_hub/configs/style.dart';
-
+import 'package:style/default_color.dart';
 class CustomCategoryWidget extends StatelessWidget {
   const CustomCategoryWidget(
       {super.key,
@@ -28,7 +27,7 @@ class CustomCategoryWidget extends StatelessWidget {
           onPressed: onPressed,
           style: ElevatedButton.styleFrom(
               backgroundColor: backgroundColor,
-              foregroundColor: kPrimaryColor,
+              foregroundColor: DefaultColors.primaryColor,
               elevation: 2,
               shadowColor: shadowColor,
               padding: const EdgeInsets.all(5),
@@ -49,7 +48,7 @@ class CustomCategoryWidget extends StatelessWidget {
                       progressIndicatorBuilder:
                           (context, url, downloadProgress) => Center(
                         child: CircularProgressIndicator(
-                            color: kPrimaryColor,
+                            color: DefaultColors.primaryColor,
                             value: downloadProgress.progress),
                       ),
                       errorWidget: (context, url, error) =>

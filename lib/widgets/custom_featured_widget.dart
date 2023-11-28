@@ -4,11 +4,12 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:food_hub/configs/style.dart';
 import 'package:food_hub/controller/api_controller.dart';
 import 'package:food_hub/custom_icons_icons.dart';
 import 'package:food_hub/models/food_hub/restaurants_model.dart';
 import 'package:food_hub/router/app_router.gr.dart';
+import 'package:style/default_color.dart';
+import 'package:style/default_text_style.dart';
 
 import '../configs/constant_varible.dart';
 
@@ -26,8 +27,8 @@ class CustomFeaturedWidget extends ConsumerWidget {
         child: ElevatedButton(
           style: ElevatedButton.styleFrom(
               padding: EdgeInsets.zero,
-              backgroundColor: kWhiteColor,
-              shadowColor: kWhiteShadowColor,
+              backgroundColor: DefaultColors.whiteColor,
+              shadowColor: DefaultColors.whiteShadowColor,
               elevation: 3,
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(15))),
@@ -62,7 +63,7 @@ class CustomFeaturedWidget extends ConsumerWidget {
                         progressIndicatorBuilder:
                             (context, url, downloadProgress) => Center(
                           child: CircularProgressIndicator(
-                              color: kPrimaryColor,
+                              color: DefaultColors.primaryColor,
                               value: downloadProgress.progress),
                         ),
                         errorWidget: (context, url, error) =>
@@ -78,11 +79,11 @@ class CustomFeaturedWidget extends ConsumerWidget {
                         padding: const EdgeInsets.symmetric(
                             horizontal: 8, vertical: 9),
                         decoration: BoxDecoration(
-                            color: kWhiteColor,
+                            color: DefaultColors.whiteColor,
                             borderRadius: BorderRadius.circular(100),
                             boxShadow: const [
                               BoxShadow(
-                                  color: kOrangeShadowColor, blurRadius: 2.3)
+                                  color: DefaultColors.orangeShadowColor, blurRadius: 2.3)
                             ]),
                         child: Row(
                           mainAxisSize: MainAxisSize.min,
@@ -93,7 +94,7 @@ class CustomFeaturedWidget extends ConsumerWidget {
                               style: TextStyle(
                                   fontSize: 11.69.sp,
                                   fontFamily: fontFamily,
-                                  color: kTextBlackColor,
+                                  color: DefaultColors.textBlackColor,
                                   fontWeight: FontWeight.w600),
                             ),
                             Padding(
@@ -101,7 +102,7 @@ class CustomFeaturedWidget extends ConsumerWidget {
                                   horizontal: 4.2, vertical: 1),
                               child: Icon(
                                 CustomIcons.star,
-                                color: kYellowColor,
+                                color: DefaultColors.yellowColor,
                                 size: 11.69.sp,
                               ),
                             ),
@@ -112,7 +113,7 @@ class CustomFeaturedWidget extends ConsumerWidget {
                                 style: TextStyle(
                                   fontFamily: fontFamily,
                                   fontSize: 8.19.sp,
-                                  color: kGreyColor,
+                                  color: DefaultColors.greyColor,
                                 ),
                               ),
                             )
@@ -144,7 +145,7 @@ class CustomFeaturedWidget extends ConsumerWidget {
                     Text(
                       restaurantsModel.restaurantName,
                       style: TextStyle(
-                          color: kTextBlackColor,
+                          color: DefaultColors.textBlackColor,
                           fontFamily: fontFamily,
                           fontSize: 15.sp,
                           fontWeight: FontWeight.w600),
@@ -157,7 +158,7 @@ class CustomFeaturedWidget extends ConsumerWidget {
                             width: 10,
                             child: Icon(
                               Icons.check_circle_rounded,
-                              color: kGreenColor,
+                              color: DefaultColors.greenColor,
                               size: 15,
                             ),
                           )
@@ -178,7 +179,7 @@ class CustomFeaturedWidget extends ConsumerWidget {
                               children: [
                                 const Icon(
                                   CustomIcons.ship,
-                                  color: kPrimaryColor,
+                                  color: DefaultColors.primaryColor,
                                   size: 16,
                                 ),
                                 Padding(
@@ -188,7 +189,7 @@ class CustomFeaturedWidget extends ConsumerWidget {
                                     "Free delivery",
                                     textAlign: TextAlign.center,
                                     style: TextStyle(
-                                        color: k400GreyColor,
+                                        color: DefaultColors.k400GreyColor,
                                         fontFamily: fontFamily,
                                         fontWeight: FontWeight.w400,
                                         fontSize: 12.sp),
@@ -202,7 +203,7 @@ class CustomFeaturedWidget extends ConsumerWidget {
                       children: [
                         const Icon(
                           CustomIcons.time,
-                          color: kPrimaryColor,
+                          color: DefaultColors.primaryColor,
                           size: 16,
                         ),
                         SizedBox(
@@ -215,7 +216,7 @@ class CustomFeaturedWidget extends ConsumerWidget {
                                 .deliveryDescription["delivery_time"],
                             textAlign: TextAlign.center,
                             style: TextStyle(
-                                color: k400GreyColor,
+                                color: DefaultColors.k400GreyColor,
                                 fontFamily: fontFamily,
                                 fontWeight: FontWeight.w400,
                                 fontSize: 12.sp),
@@ -231,14 +232,14 @@ class CustomFeaturedWidget extends ConsumerWidget {
                     tags.length,
                     (index) => Container(
                           decoration: BoxDecoration(
-                              color: k0xFFF6F6F6,
+                              color: DefaultColors.k0xFFF6F6F6,
                               borderRadius: BorderRadius.circular(5)),
                           padding: const EdgeInsets.all(5),
                           margin: const EdgeInsets.only(
                               left: 7, right: 7, bottom: 14),
                           child: Text(
                             tags[index],
-                            style: k12w400whiteColor,
+                            style: DefaultTextStyles.k12w400whiteColor,
                           ),
                         )),
               ),

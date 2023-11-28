@@ -7,12 +7,12 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:food_hub/Screens/main_screen.dart';
 import 'package:food_hub/configs/constant_varible.dart';
-import 'package:food_hub/configs/style.dart';
 import 'package:food_hub/controller/language_controller.dart';
 import 'package:food_hub/router/app_router.gr.dart';
 import 'package:food_hub/widgets/custom_button.dart';
 import 'package:food_hub/widgets/facebook_button.dart';
 import 'package:food_hub/widgets/google_button.dart';
+import 'package:style/default_color.dart';
 
 import '../controller/login_controller.dart';
 import '../controller/switch_method_controller.dart';
@@ -87,8 +87,8 @@ class _WelcomeScreenState extends ConsumerState<WelcomeScreen> {
                 end: Alignment.bottomCenter,
                 tileMode: TileMode.clamp,
                 colors: [
-                  kStartLinearColor,
-                  kEndLinearColor,
+                  DefaultColors.startLinearColor,
+                  DefaultColors.endLinearColor,
                 ]),
           ),
           child: Scaffold(
@@ -157,9 +157,9 @@ class _WelcomeScreenState extends ConsumerState<WelcomeScreen> {
                                     horizontal: 14.w, vertical: 10.h),
                                 boxShadow: const [
                                   BoxShadow(
-                                      color: kWhiteShadowColor, blurRadius: 3.5)
+                                      color: DefaultColors.whiteShadowColor, blurRadius: 3.5)
                                 ],
-                                color: kWhiteColor,
+                                color: DefaultColors.whiteColor,
                                 radius: 27,
                                 child: Text(
                                   "Skip",
@@ -167,7 +167,7 @@ class _WelcomeScreenState extends ConsumerState<WelcomeScreen> {
                                     fontFamily: fontFamily,
                                     fontWeight: FontWeight.w400,
                                     fontSize: 14.sp,
-                                    color: kPrimaryColor,
+                                    color: DefaultColors.primaryColor,
                                   ),
                                 ),
                               ),
@@ -183,7 +183,7 @@ class _WelcomeScreenState extends ConsumerState<WelcomeScreen> {
                               style: const TextStyle(
                                   fontFamily: fontFamily,
                                   height: 1.28,
-                                  color: kBlackColor,
+                                  color: DefaultColors.blackColor,
                                   fontWeight: FontWeight.w700,
                                   fontSize: 53),
                               children: <TextSpan>[
@@ -191,7 +191,7 @@ class _WelcomeScreenState extends ConsumerState<WelcomeScreen> {
                                   text: '\nFoodHub',
                                   style: TextStyle(
                                     fontFamily: fontFamily,
-                                    color: kPrimaryColor,
+                                    color: DefaultColors.primaryColor,
                                     fontWeight: FontWeight.w700,
                                     fontSize: 45.sp,
                                     height: 1.28,
@@ -209,7 +209,7 @@ class _WelcomeScreenState extends ConsumerState<WelcomeScreen> {
                             trans.yourFavourite,
                             style: TextStyle(
                               fontFamily: fontFamily,
-                              color: kBlackColor,
+                              color: DefaultColors.blackColor,
                               fontWeight: FontWeight.w400,
                               height: 1.5,
                               fontSize: 18.sp,
@@ -231,7 +231,7 @@ class _WelcomeScreenState extends ConsumerState<WelcomeScreen> {
                                   Container(
                                     width: 84.w,
                                     height: 1,
-                                    color: kWhite50Color,
+                                    color: DefaultColors.white50Color,
                                   ),
                                   Padding(
                                     padding:
@@ -247,7 +247,7 @@ class _WelcomeScreenState extends ConsumerState<WelcomeScreen> {
                                   Container(
                                     width: 84.w,
                                     height: 1,
-                                    color: kWhite50Color,
+                                    color: DefaultColors.white50Color,
                                   ),
                                 ],
                               ),
@@ -280,18 +280,18 @@ class _WelcomeScreenState extends ConsumerState<WelcomeScreen> {
                               Center(
                                 child: CustomButton(
                                   onTap: () => router.push(const SignUpRoute()),
-                                  color: kTransparentWhieColor,
+                                  color: DefaultColors.transparentWhieColor,
                                   buttonKey: GlobalKey(),
                                   radius: 30,
                                   padding: const EdgeInsets.symmetric(
                                       vertical: 19, horizontal: 59),
-                                  borderColor: kWhiteColor,
+                                  borderColor: DefaultColors.whiteColor,
                                   child: Text(
                                     trans.startWith,
                                     textAlign: TextAlign.center,
                                     style: TextStyle(
                                         fontFamily: fontFamily,
-                                        color: kWhiteColor,
+                                        color: DefaultColors.whiteColor,
                                         fontWeight: FontWeight.w500,
                                         fontSize: 17.sp),
                                   ),
@@ -306,7 +306,7 @@ class _WelcomeScreenState extends ConsumerState<WelcomeScreen> {
                                       fontSize: 16.sp,
                                       fontFamily: fontFamily,
                                       fontWeight: FontWeight.w400,
-                                      color: kWhiteColor,
+                                      color: DefaultColors.whiteColor,
                                     ),
                                     children: [
                                       TextSpan(
@@ -317,7 +317,7 @@ class _WelcomeScreenState extends ConsumerState<WelcomeScreen> {
                                           },
                                         style: TextStyle(
                                             fontFamily: fontFamily,
-                                            color: kWhiteColor,
+                                            color: DefaultColors.whiteColor,
                                             decoration:
                                                 TextDecoration.underline,
                                             fontSize: 16.sp,

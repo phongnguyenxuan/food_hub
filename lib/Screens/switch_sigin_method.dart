@@ -5,13 +5,14 @@ import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:food_hub/configs/constant_varible.dart';
-import 'package:food_hub/configs/style.dart';
 import 'package:food_hub/controller/api_controller.dart';
 import 'package:food_hub/controller/switch_method_controller.dart';
 import 'package:food_hub/models/user/user_model.dart';
 import 'package:food_hub/router/app_router.gr.dart';
 import 'package:food_hub/widgets/custom_button.dart';
 import 'package:package_info_plus/package_info_plus.dart';
+import 'package:style/default_color.dart';
+import 'package:style/default_text_style.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../controller/login_controller.dart';
@@ -111,22 +112,22 @@ class _SwitchSiginMethodState extends ConsumerState<SwitchSiginScreen> {
         systemNavigationBarColor: Colors.transparent,
       ),
       child: Scaffold(
-        backgroundColor: kWhiteColor,
+        backgroundColor: DefaultColors.whiteColor,
         body: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Center(
+            const Center(
               child: Text(
                 "Switch sign in method\n(API)",
                 textAlign: TextAlign.center,
-                style: titleHomeStyle,
+                style: DefaultTextStyles.titleHomeStyle,
               ),
             ),
             Switch(
               // This bool value toggles the switch.
               value: isActive,
-              activeColor: kPrimaryColor,
+              activeColor: DefaultColors.primaryColor,
               onChanged: (bool value) {
                 ref.read(switchProvider.notifier).updateSwitch(value);
               },
@@ -148,7 +149,7 @@ class _SwitchSiginMethodState extends ConsumerState<SwitchSiginScreen> {
                   );
                 }
               },
-              color: kPrimaryColor,
+              color: DefaultColors.primaryColor,
               radius: 15,
               padding: const EdgeInsets.all(10),
               child: Text(
@@ -156,7 +157,7 @@ class _SwitchSiginMethodState extends ConsumerState<SwitchSiginScreen> {
                 style: TextStyle(
                   fontFamily: fontFamily,
                   fontSize: 16.sp,
-                  color: kWhiteColor,
+                  color: DefaultColors.whiteColor,
                 ),
               ),
             ),

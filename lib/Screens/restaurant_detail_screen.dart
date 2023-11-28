@@ -7,9 +7,9 @@ import 'package:food_hub/models/food_hub/dish_model.dart';
 import 'package:food_hub/models/food_hub/restaurant_model.dart';
 import 'package:food_hub/router/app_router.gr.dart';
 import 'package:food_hub/widgets/custom_dish.dart';
+import 'package:style/default_color.dart';
 
 import '../configs/constant_varible.dart';
-import '../configs/style.dart';
 import '../controller/api_controller.dart';
 import '../custom_icons_icons.dart';
 import '../widgets/custom_button.dart';
@@ -40,7 +40,7 @@ class _RestaurantDetailScreenState
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: kWhiteColor,
+      backgroundColor: DefaultColors.whiteColor,
       body: CustomScrollView(
         physics: const BouncingScrollPhysics(),
         slivers: <Widget>[
@@ -86,7 +86,7 @@ class _RestaurantDetailScreenState
 
   SliverAppBar header(BuildContext context) {
     return SliverAppBar(
-      backgroundColor: kWhiteColor,
+      backgroundColor: DefaultColors.whiteColor,
       elevation: 0,
       automaticallyImplyLeading: false,
       pinned: true,
@@ -105,12 +105,12 @@ class _RestaurantDetailScreenState
                 onTap: () {
                   Navigator.pop(context);
                 },
-                color: kWhiteColor,
+                color: DefaultColors.whiteColor,
                 padding: const EdgeInsets.all(10),
                 radius: 15,
                 child: const Icon(
                   Icons.arrow_back_ios_rounded,
-                  color: kBlackColor,
+                  color: DefaultColors.blackColor,
                 ),
               ),
             ),
@@ -132,7 +132,7 @@ class _RestaurantDetailScreenState
               const EdgeInsets.only(left: 15, right: 15, top: 25, bottom: 20),
           child: Container(
             decoration: BoxDecoration(
-              color: kWhiteColor,
+              color: DefaultColors.whiteColor,
               borderRadius: BorderRadius.circular(15),
               boxShadow: const [
                 BoxShadow(
@@ -151,7 +151,7 @@ class _RestaurantDetailScreenState
                 progressIndicatorBuilder: (context, url, downloadProgress) =>
                     Center(
                   child: CircularProgressIndicator(
-                      color: kPrimaryColor, value: downloadProgress.progress),
+                      color: DefaultColors.primaryColor, value: downloadProgress.progress),
                 ),
                 errorWidget: (context, url, error) => const Icon(Icons.error),
               ),
@@ -162,7 +162,7 @@ class _RestaurantDetailScreenState
       bottom: PreferredSize(
         preferredSize: const Size.fromHeight(150),
         child: Container(
-          color: kWhiteColor,
+          color: DefaultColors.whiteColor,
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
@@ -172,7 +172,7 @@ class _RestaurantDetailScreenState
                 padding:
                     const EdgeInsets.symmetric(horizontal: 18, vertical: 10),
                 decoration: const BoxDecoration(
-                  color: kWhiteColor,
+                  color: DefaultColors.whiteColor,
                   boxShadow: [
                     BoxShadow(
                       color: Color(0x3FD3D1D8),
@@ -194,7 +194,7 @@ class _RestaurantDetailScreenState
                       height: 65,
                       padding: const EdgeInsets.all(9.29),
                       decoration: BoxDecoration(
-                          color: kWhiteColor,
+                          color: DefaultColors.whiteColor,
                           borderRadius: BorderRadius.circular(11.5),
                           boxShadow: const [
                             BoxShadow(
@@ -210,7 +210,7 @@ class _RestaurantDetailScreenState
                         progressIndicatorBuilder:
                             (context, url, downloadProgress) => Center(
                           child: CircularProgressIndicator(
-                              color: kPrimaryColor,
+                              color: DefaultColors.primaryColor,
                               value: downloadProgress.progress),
                         ),
                         errorWidget: (context, url, error) =>
@@ -231,7 +231,7 @@ class _RestaurantDetailScreenState
                           child: Text(
                             widget.restaurantModel.restaurantName,
                             style: const TextStyle(
-                              color: kPrimaryColor,
+                              color: DefaultColors.primaryColor,
                               fontSize: 28,
                               fontFamily: fontFamily,
                               fontWeight: FontWeight.w600,
@@ -246,7 +246,7 @@ class _RestaurantDetailScreenState
                               padding: const EdgeInsets.symmetric(
                                   horizontal: 10, vertical: 9),
                               decoration: BoxDecoration(
-                                  color: kWhiteColor,
+                                  color: DefaultColors.whiteColor,
                                   borderRadius: BorderRadius.circular(100),
                                   boxShadow: const [
                                     BoxShadow(
@@ -265,7 +265,7 @@ class _RestaurantDetailScreenState
                                     style: TextStyle(
                                         fontSize: 11.69.sp,
                                         fontFamily: fontFamily,
-                                        color: kTextBlackColor,
+                                        color: DefaultColors.textBlackColor,
                                         fontWeight: FontWeight.w600),
                                   ),
                                   Padding(
@@ -273,7 +273,7 @@ class _RestaurantDetailScreenState
                                         horizontal: 4.2, vertical: 1),
                                     child: Icon(
                                       CustomIcons.star,
-                                      color: kYellowColor,
+                                      color: DefaultColors.yellowColor,
                                       size: 11.69.sp,
                                     ),
                                   ),
@@ -284,7 +284,7 @@ class _RestaurantDetailScreenState
                                       style: TextStyle(
                                         fontFamily: fontFamily,
                                         fontSize: 8.19.sp,
-                                        color: kGreyColor,
+                                        color: DefaultColors.greyColor,
                                       ),
                                     ),
                                   )
@@ -297,7 +297,7 @@ class _RestaurantDetailScreenState
                             widget.restaurantModel.verify
                                 ? const Icon(
                                     Icons.check_circle_rounded,
-                                    color: kGreenColor,
+                                    color: DefaultColors.greenColor,
                                     size: 20,
                                   )
                                 : Container(),
@@ -334,7 +334,7 @@ class _RestaurantDetailScreenState
                     const Icon(
                       CustomIcons.search,
                       size: 15,
-                      color: kPrimaryColor,
+                      color: DefaultColors.primaryColor,
                     ),
                     const SizedBox(
                       width: 39,

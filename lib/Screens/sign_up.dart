@@ -5,9 +5,10 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:food_hub/widgets/facebook_button.dart';
 import 'package:food_hub/widgets/google_button.dart';
+import 'package:style/default_color.dart';
+import 'package:style/default_text_style.dart';
 
 import '../configs/constant_varible.dart';
-import '../configs/style.dart';
 import '../controller/api_controller.dart';
 import '../widgets/custom_button.dart';
 import '../widgets/custom_textfield.dart';
@@ -54,10 +55,10 @@ class _SignUpScreenState extends ConsumerState<SignUpScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: kWhiteColor,
+      backgroundColor: DefaultColors.whiteColor,
       appBar: AppBar(
         automaticallyImplyLeading: false,
-        backgroundColor: kWhiteColor,
+        backgroundColor: DefaultColors.whiteColor,
         elevation: 0,
         flexibleSpace: Stack(
           children: [
@@ -77,12 +78,12 @@ class _SignUpScreenState extends ConsumerState<SignUpScreen> {
                 onTap: () {
                   Navigator.pop(context);
                 },
-                color: kWhiteColor,
+                color: DefaultColors.whiteColor,
                 padding: const EdgeInsets.all(10),
                 radius: 15,
                 child: const Icon(
                   Icons.arrow_back_ios_rounded,
-                  color: kBlackColor,
+                  color: DefaultColors.blackColor,
                 ),
               ),
             ),
@@ -100,7 +101,7 @@ class _SignUpScreenState extends ConsumerState<SignUpScreen> {
                 children: [
                   Padding(
                     padding: const EdgeInsets.only(top: 20),
-                    child: Text(trans.signUp, style: titleTextStyle),
+                    child: Text(trans.signUp, style: DefaultTextStyles.titleTextStyle),
                   ),
                   SizedBox(
                     height: 30.h,
@@ -160,11 +161,11 @@ class _SignUpScreenState extends ConsumerState<SignUpScreen> {
                               passwordController.text, nameController.text);
                         }
                       },
-                      color: kPrimaryColor,
+                      color: DefaultColors.primaryColor,
                       radius: 30,
                       boxShadow: const [
                         BoxShadow(
-                            color: kGreyShadowColor,
+                            color: DefaultColors.greyShadowColor,
                             blurRadius: 20,
                             offset: Offset(0, 10))
                       ],
@@ -176,7 +177,7 @@ class _SignUpScreenState extends ConsumerState<SignUpScreen> {
                               fontSize: 15.sp,
                               fontFamily: fontFamily,
                               letterSpacing: 1.2.sp,
-                              color: kWhiteColor,
+                              color: DefaultColors.whiteColor,
                               fontWeight: FontWeight.w600),
                         ),
                       ),
@@ -185,7 +186,7 @@ class _SignUpScreenState extends ConsumerState<SignUpScreen> {
                   RichText(
                     text: TextSpan(
                         text: trans.alreadyHave,
-                        style: haveAccTextStyle,
+                        style: DefaultTextStyles.haveAccTextStyle,
                         children: [
                           TextSpan(
                             text: trans.signIn,
@@ -196,7 +197,7 @@ class _SignUpScreenState extends ConsumerState<SignUpScreen> {
                               },
                             style: TextStyle(
                                 fontFamily: fontFamily,
-                                color: kPrimaryColor,
+                                color: DefaultColors.primaryColor,
                                 fontSize: 14.sp,
                                 fontWeight: FontWeight.w500),
                           )
@@ -212,14 +213,14 @@ class _SignUpScreenState extends ConsumerState<SignUpScreen> {
                       Container(
                         width: 84.w,
                         height: 1,
-                        color: kDividerBlackColor,
+                        color: DefaultColors.dividerBlackColor,
                       ),
                       Padding(
                         padding: EdgeInsets.symmetric(horizontal: 17.w),
                         child: Text(
                           trans.signinWith,
                           style: TextStyle(
-                              color: kTextBlack50Color,
+                              color: DefaultColors.textBlack50Color,
                               fontFamily: fontFamily,
                               fontWeight: FontWeight.w500,
                               fontSize: 14.sp),
@@ -228,7 +229,7 @@ class _SignUpScreenState extends ConsumerState<SignUpScreen> {
                       Container(
                         width: 84.w,
                         height: 1,
-                        color: kDividerBlackColor,
+                        color: DefaultColors.dividerBlackColor,
                       ),
                     ],
                   ),

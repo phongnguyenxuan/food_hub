@@ -6,9 +6,10 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
 import 'package:food_hub/models/user/user_model.dart';
 import 'package:food_hub/router/app_router.gr.dart';
+import 'package:style/default_color.dart';
+import 'package:style/default_text_style.dart';
 
 import '../configs/constant_varible.dart';
-import '../configs/style.dart';
 import '../controller/api_controller.dart';
 import '../controller/login_controller.dart';
 import '../controller/switch_method_controller.dart';
@@ -60,13 +61,13 @@ class _MainScreenState extends ConsumerState<MainScreen> {
                 style: DrawerStyle.defaultStyle,
                 boxShadow: const [
                   BoxShadow(
-                      color: kWhiteShadowColor, blurRadius: 8, spreadRadius: 5)
+                      color: DefaultColors.whiteShadowColor, blurRadius: 8, spreadRadius: 5)
                 ],
                 mainScreenTapClose: true,
                 menuScreenTapClose: true,
                 moveMenuScreen: false,
                 androidCloseOnBackTap: true,
-                menuBackgroundColor: kWhiteColor,
+                menuBackgroundColor: DefaultColors.whiteColor,
                 openCurve: Curves.easeIn,
                 closeCurve: Curves.easeOut,
                 duration: const Duration(milliseconds: 300),
@@ -77,14 +78,14 @@ class _MainScreenState extends ConsumerState<MainScreen> {
           }
           return const Center(
             child: CircularProgressIndicator(
-              color: kPrimaryColor,
+              color: DefaultColors.primaryColor,
             ),
           );
         } else {
           if (user == null) {
             return const Center(
               child: CircularProgressIndicator(
-                color: kPrimaryColor,
+                color: DefaultColors.primaryColor,
               ),
             );
           }
@@ -96,7 +97,7 @@ class _MainScreenState extends ConsumerState<MainScreen> {
 
   Scaffold menuScreen(UserModel? userModel) {
     return Scaffold(
-        backgroundColor: kWhiteColor,
+        backgroundColor: DefaultColors.whiteColor,
         body: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -108,7 +109,7 @@ class _MainScreenState extends ConsumerState<MainScreen> {
               padding: const EdgeInsets.all(21),
               child: Container(
                 decoration: const BoxDecoration(
-                  color: kPrimaryColor,
+                  color: DefaultColors.primaryColor,
                   shape: BoxShape.circle,
                   image: DecorationImage(
                       image: AssetImage(avatarAssetsPath), fit: BoxFit.cover),
@@ -120,10 +121,10 @@ class _MainScreenState extends ConsumerState<MainScreen> {
               child: RichText(
                 text: TextSpan(
                   text: "${userModel?.userName}\n",
-                  style: k20w600blackColorStyle,
+                  style: DefaultTextStyles.k20w600blackColorStyle,
                   children: [
                     TextSpan(
-                        text: userModel?.email, style: k14w400FF9EA1B1Color),
+                        text: userModel?.email, style: DefaultTextStyles.k14w400FF9EA1B1Color),
                   ],
                 ),
               ),
@@ -137,7 +138,7 @@ class _MainScreenState extends ConsumerState<MainScreen> {
                           children: [
                             Icon(
                               e["icon"],
-                              color: kGreyColor,
+                              color: DefaultColors.greyColor,
                               size: 23.sp,
                             ),
                             SizedBox(
@@ -145,7 +146,7 @@ class _MainScreenState extends ConsumerState<MainScreen> {
                             ),
                             Text(
                               e["title"],
-                              style: k16w400blackColor,
+                              style: DefaultTextStyles.k16w400blackColor,
                             )
                           ],
                         ),
@@ -161,7 +162,7 @@ class _MainScreenState extends ConsumerState<MainScreen> {
                   onTap: () async {
                     await ref.read(apiControlProvider.notifier).logOut();
                   },
-                  color: kPrimaryColor,
+                  color: DefaultColors.primaryColor,
                   padding: const EdgeInsets.only(
                       left: 9, bottom: 9, top: 9, right: 14),
                   radius: 28,
@@ -175,9 +176,9 @@ class _MainScreenState extends ConsumerState<MainScreen> {
                       SizedBox(
                         width: 9.w,
                       ),
-                      Text(
+                      const Text(
                         "Log Out",
-                        style: k16w400whiteColor,
+                        style: DefaultTextStyles.k16w400whiteColor,
                       )
                     ],
                   )),
@@ -200,7 +201,7 @@ class _MainScreenState extends ConsumerState<MainScreen> {
         return Scaffold(
           appBar: AppBar(
             automaticallyImplyLeading: false,
-            backgroundColor: kWhiteColor,
+            backgroundColor: DefaultColors.whiteColor,
             elevation: 0,
             flexibleSpace: Padding(
               padding: const EdgeInsets.only(left: 26, top: 26, right: 15),
@@ -213,14 +214,14 @@ class _MainScreenState extends ConsumerState<MainScreen> {
                     onTap: () {
                       zoomDrawerController.toggle!();
                     },
-                    shadowColor: kGreyShadowColor,
-                    color: kWhiteColor,
+                    shadowColor: DefaultColors.greyShadowColor,
+                    color: DefaultColors.whiteColor,
                     elevation: 1,
                     padding: const EdgeInsets.all(7),
                     radius: 15,
                     child: const Icon(
                       CustomIcons.menu,
-                      color: kBlackColor,
+                      color: DefaultColors.blackColor,
                       size: 15,
                     ),
                   ),
@@ -230,7 +231,7 @@ class _MainScreenState extends ConsumerState<MainScreen> {
                       Text(
                         "Deliver to",
                         style: TextStyle(
-                            color: kGreyTextColor,
+                            color: DefaultColors.greyTextColor,
                             fontFamily: fontFamily,
                             fontSize: 14.sp),
                       ),
@@ -241,7 +242,7 @@ class _MainScreenState extends ConsumerState<MainScreen> {
                         "4102 Pretty View Lane",
                         style: TextStyle(
                             fontSize: 15.sp,
-                            color: kPrimaryColor,
+                            color: DefaultColors.primaryColor,
                             fontFamily: fontFamily),
                       )
                     ],
@@ -253,7 +254,7 @@ class _MainScreenState extends ConsumerState<MainScreen> {
                     padding: const EdgeInsets.all(5),
                     child: Container(
                       decoration: BoxDecoration(
-                        color: kPrimaryColor,
+                        color: DefaultColors.primaryColor,
                         borderRadius: BorderRadius.circular(15),
                         image: const DecorationImage(
                             image: AssetImage(avatarAssetsPath),
@@ -266,12 +267,12 @@ class _MainScreenState extends ConsumerState<MainScreen> {
             ),
           ),
           body: child,
-          backgroundColor: kWhiteColor,
+          backgroundColor: DefaultColors.whiteColor,
           bottomNavigationBar: Container(
             decoration: const BoxDecoration(
-                boxShadow: [BoxShadow(color: kbottomBarColor, blurRadius: 2)]),
+                boxShadow: [BoxShadow(color: DefaultColors.bottomBarColor, blurRadius: 2)]),
             child: BottomNavigationBar(
-              backgroundColor: kWhiteColor,
+              backgroundColor: DefaultColors.whiteColor,
               elevation: 2,
               type: BottomNavigationBarType.fixed,
               items: List<BottomNavigationBarItem>.generate(
@@ -291,8 +292,8 @@ class _MainScreenState extends ConsumerState<MainScreen> {
                       ),
                       label: "")),
               currentIndex: tabsRouter.activeIndex,
-              selectedItemColor: kPrimaryColor,
-              unselectedItemColor: kUnselectedIcon,
+              selectedItemColor: DefaultColors.primaryColor,
+              unselectedItemColor: DefaultColors.unselectedIcon,
               showSelectedLabels: false,
               showUnselectedLabels: false,
               onTap: tabsRouter.setActiveIndex,
@@ -302,112 +303,4 @@ class _MainScreenState extends ConsumerState<MainScreen> {
       },
     );
   }
-
-  // Scaffold body(User user) {
-  //   return Scaffold(
-  //     backgroundColor: kWhiteColor,
-  //     appBar: AppBar(
-  //       automaticallyImplyLeading: false,
-  //       backgroundColor: kWhiteColor,
-  //       elevation: 0,
-  //       flexibleSpace: Padding(
-  //         padding: const EdgeInsets.only(left: 26, top: 26, right: 15),
-  //         child: Row(
-  //           mainAxisSize: MainAxisSize.max,
-  //           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-  //           crossAxisAlignment: CrossAxisAlignment.center,
-  //           children: [
-  //             const CustomButton(
-  //               shadowColor: kGreyShadowColor,
-  //               color: kWhiteColor,
-  //               elevation: 1,
-  //               padding: EdgeInsets.all(7),
-  //               radius: 15,
-  //               child: Icon(
-  //                 CustomIcons.menu,
-  //                 color: kBlackColor,
-  //                 size: 15,
-  //               ),
-  //             ),
-  //             Column(
-  //               mainAxisSize: MainAxisSize.min,
-  //               children: [
-  //                 Text(
-  //                   "Deliver to",
-  //                   style: TextStyle(
-  //                       color: kGreyTextColor,
-  //                       fontFamily: fontFamily,
-  //                       fontSize: 14.sp),
-  //                 ),
-  //                 SizedBox(
-  //                   height: 4.h,
-  //                 ),
-  //                 Text(
-  //                   "4102 Pretty View Lane",
-  //                   style: TextStyle(
-  //                       fontSize: 15.sp,
-  //                       color: kPrimaryColor,
-  //                       fontFamily: fontFamily),
-  //                 )
-  //               ],
-  //             ),
-  //             //avatar
-  //             Container(
-  //               width: 59,
-  //               height: 59,
-  //               padding: const EdgeInsets.all(5),
-  //               child: Container(
-  //                 decoration: BoxDecoration(
-  //                   color: kPrimaryColor,
-  //                   borderRadius: BorderRadius.circular(15),
-  //                   image: user.photoURL != null
-  //                       ? DecorationImage(
-  //                           image: NetworkImage(user.photoURL!),
-  //                           fit: BoxFit.cover)
-  //                       : const DecorationImage(
-  //                           image: AssetImage(avatarAssetsPath),
-  //                           fit: BoxFit.cover),
-  //                 ),
-  //               ),
-  //             )
-  //           ],
-  //         ),
-  //       ),
-  //     ),
-  //     body: Center(
-  //       child: _widgetOptions.elementAt(_selectedIndex),
-  //     ),
-  //     bottomNavigationBar: Container(
-  //       decoration: const BoxDecoration(
-  //           boxShadow: [BoxShadow(color: kbottomBarColor, blurRadius: 2)]),
-  //       child: BottomNavigationBar(
-  //         backgroundColor: kWhiteColor,
-  //         elevation: 2,
-  //         type: BottomNavigationBarType.fixed,
-  //         items: List<BottomNavigationBarItem>.generate(
-  //             _icons.length,
-  //             (index) => BottomNavigationBarItem(
-  //                 icon: Container(
-  //                   margin: const EdgeInsets.symmetric(vertical: 12),
-  //                   child: Padding(
-  //                     padding: index == 2
-  //                         ? const EdgeInsets.only(bottom: 5)
-  //                         : EdgeInsets.zero,
-  //                     child: Icon(
-  //                       _icons[index],
-  //                       size: index == 2 ? 25.sp : 28.sp,
-  //                     ),
-  //                   ),
-  //                 ),
-  //                 label: "")),
-  //         currentIndex: _selectedIndex,
-  //         selectedItemColor: kPrimaryColor,
-  //         unselectedItemColor: kUnselectedIcon,
-  //         showSelectedLabels: false,
-  //         showUnselectedLabels: false,
-  //         onTap: _onItemTapped,
-  //       ),
-  //     ),
-  //   );
-  // }
 }

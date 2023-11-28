@@ -2,9 +2,10 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:food_hub/configs/style.dart';
 import 'package:food_hub/controller/auth_controller.dart';
 import 'package:food_hub/widgets/custom_textfield.dart';
+import 'package:style/default_color.dart';
+import 'package:style/default_text_style.dart';
 
 import '../configs/constant_varible.dart';
 import '../widgets/custom_button.dart';
@@ -25,10 +26,10 @@ class _ForgotPassScreenState extends ConsumerState<ForgotPassScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: kWhiteColor,
+      backgroundColor: DefaultColors.whiteColor,
       appBar: AppBar(
         automaticallyImplyLeading: false,
-        backgroundColor: kWhiteColor,
+        backgroundColor: DefaultColors.whiteColor,
         elevation: 0,
         flexibleSpace: Stack(
           children: [
@@ -48,19 +49,19 @@ class _ForgotPassScreenState extends ConsumerState<ForgotPassScreen> {
                 onTap: () {
                   Navigator.pop(context);
                 },
-                color: kWhiteColor,
+                color: DefaultColors.whiteColor,
                 padding: const EdgeInsets.all(10),
                 radius: 15,
                 boxShadow: const [
                   BoxShadow(
-                    color: kWhiteShadowColor,
+                    color: DefaultColors.whiteShadowColor,
                     blurRadius: 2,
                     spreadRadius: 2,
                   ),
                 ],
                 child: const Icon(
                   Icons.arrow_back_ios_rounded,
-                  color: kBlackColor,
+                  color: DefaultColors.blackColor,
                 ),
               ),
             ),
@@ -75,18 +76,18 @@ class _ForgotPassScreenState extends ConsumerState<ForgotPassScreen> {
             SizedBox(
               height: 100.h,
             ),
-            Padding(
-              padding: const EdgeInsets.only(left: 26, bottom: 12),
+            const Padding(
+              padding: EdgeInsets.only(left: 26, bottom: 12),
               child: Text(
                 "Resset Password",
-                style: titleTextStyle,
+                style: DefaultTextStyles.titleTextStyle,
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.only(left: 26, bottom: 38),
+            const Padding(
+              padding: EdgeInsets.only(left: 26, bottom: 38),
               child: Text(
                 "Please enter your email address to\nrequest a password reset",
-                style: k14fontsizeW400grey,
+                style: DefaultTextStyles.k14fontsizeW400grey,
               ),
             ),
             Padding(
@@ -102,7 +103,7 @@ class _ForgotPassScreenState extends ConsumerState<ForgotPassScreen> {
                         .read(authControllerProvider.notifier)
                         .forgotPassword(context, mailController.text);
                   },
-                  color: kPrimaryColor,
+                  color: DefaultColors.primaryColor,
                   radius: 28.5,
                   padding:
                       const EdgeInsets.symmetric(vertical: 25, horizontal: 45),
@@ -112,7 +113,7 @@ class _ForgotPassScreenState extends ConsumerState<ForgotPassScreen> {
                         fontSize: 15.sp,
                         fontFamily: fontFamily,
                         letterSpacing: 1.2.sp,
-                        color: kWhiteColor,
+                        color: DefaultColors.whiteColor,
                         fontWeight: FontWeight.w600),
                   ),
                 ),

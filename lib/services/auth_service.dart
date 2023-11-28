@@ -7,10 +7,10 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:food_hub/Screens/home_screen.dart';
 import 'package:food_hub/Screens/verify_screen.dart';
 import 'package:food_hub/configs/constant_varible.dart';
-import 'package:food_hub/configs/style.dart';
 import 'package:food_hub/provider/firebae_provider.dart';
 import 'package:food_hub/widgets/custom_button.dart';
 import 'package:google_sign_in/google_sign_in.dart';
+import 'package:style/default_color.dart';
 
 import '../Screens/welcome_screen.dart';
 
@@ -65,26 +65,26 @@ class AuthService {
       context: context,
       builder: (context) {
         return AlertDialog(
-          backgroundColor: kWhiteColor,
+          backgroundColor: DefaultColors.whiteColor,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(15),
           ),
           title: const Text(
             "Oops!!",
-            style: TextStyle(fontFamily: fontFamily, color: kPrimaryColor),
+            style: TextStyle(fontFamily: fontFamily, color: DefaultColors.primaryColor),
           ),
           content: Text(
             errorMessage(code),
-            style: const TextStyle(fontFamily: fontFamily, color: kBlackColor),
+            style: const TextStyle(fontFamily: fontFamily, color: DefaultColors.blackColor),
           ),
           actions: <Widget>[
             CustomButton(
-              color: kPrimaryColor,
+              color: DefaultColors.primaryColor,
               radius: 27,
               child: Text(
                 trans.approve,
                 style:
-                    const TextStyle(fontFamily: fontFamily, color: kWhiteColor),
+                    const TextStyle(fontFamily: fontFamily, color: DefaultColors.whiteColor),
               ),
               onTap: () {
                 Navigator.of(context).pop();
@@ -137,27 +137,27 @@ class AuthService {
           context: context,
           builder: (context) {
             return AlertDialog(
-              backgroundColor: kWhiteColor,
+              backgroundColor: DefaultColors.whiteColor,
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(15),
               ),
               title: const Text(
                 "Check your email",
-                style: TextStyle(fontFamily: fontFamily, color: kPrimaryColor),
+                style: TextStyle(fontFamily: fontFamily, color: DefaultColors.primaryColor),
               ),
               content: Text(
                 "We've sent password reset instructions to:\n$email",
                 style:
-                    const TextStyle(fontFamily: fontFamily, color: kBlackColor),
+                    const TextStyle(fontFamily: fontFamily, color: DefaultColors.blackColor),
               ),
               actions: <Widget>[
                 CustomButton(
-                  color: kPrimaryColor,
+                  color: DefaultColors.primaryColor,
                   radius: 27,
                   child: Text(
                     trans.approve,
                     style: const TextStyle(
-                        fontFamily: fontFamily, color: kWhiteColor),
+                        fontFamily: fontFamily, color: DefaultColors.whiteColor),
                   ),
                   onTap: () {
                     Navigator.of(context).pop();
