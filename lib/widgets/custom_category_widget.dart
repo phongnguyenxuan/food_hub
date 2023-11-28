@@ -6,14 +6,13 @@ import 'package:food_hub/configs/style.dart';
 
 class CustomCategoryWidget extends StatelessWidget {
   const CustomCategoryWidget(
-      {Key? key,
+      {super.key,
       required this.backgroundColor,
       required this.shadowColor,
       required this.imagePath,
       required this.title,
       required this.textColor,
-      this.onPressed})
-      : super(key: key);
+      this.onPressed});
   final Color backgroundColor;
   final Color shadowColor;
   final String imagePath;

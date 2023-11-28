@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
-import 'package:food_hub/Screens/home_screen.dart';
 import 'package:food_hub/models/user/user_model.dart';
 import 'package:food_hub/router/app_router.gr.dart';
 
@@ -37,22 +36,7 @@ class _MainScreenState extends ConsumerState<MainScreen> {
   }
 
   ZoomDrawerController zoomDrawerController = ZoomDrawerController();
-  // int _selectedIndex = 0;
-  // final List<Widget> _widgetOptions = <Widget>[
-  //   const HomeScreen(),
-  //   Container(),
-  //   Container(
-  //     color: Colors.red,
-  //     child: Center(
-  //         child: Text(
-  //       "Cart",
-  //       style: TextStyle(color: Colors.black),
-  //     )),
-  //   ),
-  //   Container(),
-  //   Container(),
-  // ];
-
+  
   final List<IconData> _icons = [
     CustomIcons.discover_1,
     CustomIcons.delivery_1,
@@ -60,12 +44,6 @@ class _MainScreenState extends ConsumerState<MainScreen> {
     CustomIcons.favor_1,
     CustomIcons.bell_1,
   ];
-
-  void _onItemTapped(int index) {
-    // setState(() {
-    //   _selectedIndex = index;
-    // });
-  }
 
   @override
   Widget build(BuildContext context) {

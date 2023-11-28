@@ -33,6 +33,7 @@ class _SwitchSiginMethodState extends ConsumerState<SwitchSiginScreen> {
     String version = packageInfo.version;
     await firebaseRemoteConfig.fetchAndActivate();
     String value = firebaseRemoteConfig.getString('update_app');
+    debugPrint("version : $value");
     bool isUpdate = version.contains(value);
     return isUpdate;
   }
@@ -75,13 +76,14 @@ class _SwitchSiginMethodState extends ConsumerState<SwitchSiginScreen> {
                     child: const Text("Upgrade Now"),
                     onPressed: () async {
                       String url =
-                          "https://www.youtube.com/watch?v=R8FHtIhWqNo&list=RDMM-ikYiWp0H5g&index=27";
-                      if (await canLaunchUrl(Uri.parse(url))) {
-                        await launchUrl(
-                          Uri.parse(url),
-                        );
-                      } else {
-                        throw 'Could not launch $url';
+                          "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
+                      if (!await launchUrl(Uri.parse(url),
+                              mode: LaunchMode.inAppWebView)
+                          .then((value) {
+                            Navigator.pop(context);
+                            return value;
+                          })) {
+                        throw Exception('Could not launch $url');
                       }
                     }),
               ],
