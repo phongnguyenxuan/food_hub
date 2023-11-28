@@ -3,7 +3,6 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:food_hub/Screens/dish_details.dart';
 import 'package:food_hub/models/food_hub/dish_model.dart';
 import 'package:food_hub/models/food_hub/restaurant_model.dart';
 import 'package:food_hub/router/app_router.gr.dart';

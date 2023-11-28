@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:food_hub/Screens/welcome_screen.dart';
 import 'package:food_hub/configs/constant_varible.dart';
 import 'package:food_hub/controller/login_controller.dart';
 import 'package:food_hub/models/food_hub/categories_model.dart';

@@ -6,7 +6,7 @@ import '../controller/auth_controller.dart';
 import '../provider/firebae_provider.dart';
 
 class FacebookButton extends StatelessWidget {
-  const FacebookButton({Key? key, required this.ref}) : super(key: key);
+  const FacebookButton({super.key, required this.ref});
   final WidgetRef ref;
 
   @override

@@ -15,6 +15,12 @@ class _CartScreenState extends State<CartScreen> {
   Widget build(BuildContext context) {
     return Container(
       color: Colors.purple,
+      child: const Center(
+        child: Text("Cart", style: TextStyle(
+          fontSize: 30,
+          color: Colors.white
+        ),),
+      ),
     );
   }
 }

@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:food_hub/Screens/notification_screen.dart';
 import 'package:food_hub/configs/constant_varible.dart';
 import 'package:food_hub/configs/style.dart';
 import 'package:food_hub/router/app_router.gr.dart';

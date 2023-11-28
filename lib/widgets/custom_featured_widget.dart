@@ -4,7 +4,6 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:food_hub/Screens/restaurant_detail_screen.dart';
 import 'package:food_hub/configs/style.dart';
 import 'package:food_hub/controller/api_controller.dart';
 import 'package:food_hub/custom_icons_icons.dart';

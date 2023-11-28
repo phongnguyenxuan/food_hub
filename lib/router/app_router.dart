@@ -9,7 +9,10 @@ class AppRouter extends $AppRouter {
         AutoRoute(
           page: WelcomeRoute.page,
           children: [
-            AutoRoute(page: HomeRoute.page),
+            AutoRoute(page: HomeRoute.page, children: [
+              AutoRoute(page: RestaurantDetailRoute.page),
+              AutoRoute(page: DishDetailRoute.page),
+            ]),
             AutoRoute(path: "delivery", page: DeliveryRoute.page),
             AutoRoute(path: "cart", page: CartRoute.page),
             AutoRoute(path: "favorite", page: FavoriteRoute.page),
@@ -21,8 +24,8 @@ class AppRouter extends $AppRouter {
         AutoRoute(page: SignUpRoute.page),
         AutoRoute(page: VerifyRoute.page),
         AutoRoute(page: ForgotPassRoute.page),
-        AutoRoute(page: RestaurantDetailRoute.page),
-        AutoRoute(page: DishDetailRoute.page),
+        // AutoRoute(page: RestaurantDetailRoute.page),
+        // AutoRoute(page: DishDetailRoute.page),
         AutoRoute(page: SwitchSiginRoute.page),
       ];
 }

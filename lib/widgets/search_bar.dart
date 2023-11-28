@@ -5,7 +5,7 @@ import 'package:food_hub/configs/style.dart';
 import 'package:food_hub/custom_icons_icons.dart';
 
 class CustomSearchBar extends StatelessWidget {
-  const CustomSearchBar({Key? key}) : super(key: key);
+  const CustomSearchBar({super.key});
 
   @override
   Widget build(BuildContext context) {
