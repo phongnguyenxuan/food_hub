@@ -1,7 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:food_hub/configs/style.dart';
+import 'package:style/style.dart';
 
 @RoutePage()
 class NotificationScreen extends StatelessWidget {
@@ -23,7 +23,7 @@ class NotificationScreen extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text("$args",style: k20w600blackColorStyle,)
+              Text("$args",style: DefaultTextStyles.k20w600blackColorStyle,)
             ],
           ),
         ),

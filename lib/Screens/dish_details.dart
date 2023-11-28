@@ -3,9 +3,9 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:food_hub/router/app_router.gr.dart';
+import 'package:style/default_color.dart';
 
 import '../configs/constant_varible.dart';
-import '../configs/style.dart';
 import '../custom_icons_icons.dart';
 import '../models/food_hub/topping_model.dart';
 import '../widgets/custom_button.dart';
@@ -47,7 +47,7 @@ class _DishDetailsState extends State<DishDetailScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: kWhiteColor,
+      backgroundColor: DefaultColors.whiteColor,
       body: Stack(
         children: [
           CustomScrollView(
@@ -66,7 +66,7 @@ class _DishDetailsState extends State<DishDetailScreen> {
                         children: [
                           Icon(
                             CustomIcons.star,
-                            color: kYellowColor,
+                            color: DefaultColors.yellowColor,
                             size: 18.sp,
                           ),
                           Padding(
@@ -221,7 +221,7 @@ class _DishDetailsState extends State<DishDetailScreen> {
               height: 53,
               margin: const EdgeInsets.only(bottom: 30),
               decoration: ShapeDecoration(
-                color: kPrimaryColor,
+                color: DefaultColors.primaryColor,
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(28.50),
                 ),
@@ -239,7 +239,7 @@ class _DishDetailsState extends State<DishDetailScreen> {
                   router.pushAndPopUntil(const CartRoute(), predicate:(route) => false,);
                 },
                 style: ElevatedButton.styleFrom(
-                    backgroundColor: kPrimaryColor,
+                    backgroundColor: DefaultColors.primaryColor,
                     padding: EdgeInsets.zero,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(28.50),
@@ -258,7 +258,7 @@ class _DishDetailsState extends State<DishDetailScreen> {
                       ),
                       child: const Icon(
                         CustomIcons.shop_1,
-                        color: kPrimaryColor,
+                        color: DefaultColors.primaryColor,
                       ),
                     ),
                     const Text(
@@ -295,7 +295,7 @@ class _DishDetailsState extends State<DishDetailScreen> {
               progressIndicatorBuilder: (context, url, downloadProgress) =>
                   Center(
                 child: CircularProgressIndicator(
-                    color: kPrimaryColor, value: downloadProgress.progress),
+                    color: DefaultColors.primaryColor, value: downloadProgress.progress),
               ),
               errorWidget: (context, url, error) => const Icon(Icons.error),
             ),
@@ -337,7 +337,7 @@ class _DishDetailsState extends State<DishDetailScreen> {
                   ? Icons.radio_button_checked_rounded
                   : Icons.radio_button_off_rounded,
               color: checkedTopping[index]
-                  ? kPrimaryColor
+                  ? DefaultColors.primaryColor
                   : const Color(0xD4D5DAB2),
             ),
           )
@@ -360,7 +360,7 @@ class _DishDetailsState extends State<DishDetailScreen> {
           width: 30.60,
           height: 30.60,
           decoration: ShapeDecoration(
-            color: kPrimaryColor,
+            color: DefaultColors.primaryColor,
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(17),
             ),
@@ -399,7 +399,7 @@ class _DishDetailsState extends State<DishDetailScreen> {
           height: 30.60,
           decoration: ShapeDecoration(
             shape: RoundedRectangleBorder(
-              side: const BorderSide(width: 1, color: kPrimaryColor),
+              side: const BorderSide(width: 1, color: DefaultColors.primaryColor),
               borderRadius: BorderRadius.circular(17),
             ),
             shadows: const [
@@ -413,7 +413,7 @@ class _DishDetailsState extends State<DishDetailScreen> {
           ),
           child: const Icon(
             Icons.remove,
-            color: kPrimaryColor,
+            color: DefaultColors.primaryColor,
           ),
         ),
       ),
@@ -422,7 +422,7 @@ class _DishDetailsState extends State<DishDetailScreen> {
 
   SliverAppBar header(BuildContext context) {
     return SliverAppBar(
-      backgroundColor: kWhiteColor,
+      backgroundColor: DefaultColors.whiteColor,
       elevation: 0,
       automaticallyImplyLeading: false,
       pinned: true,
@@ -441,12 +441,12 @@ class _DishDetailsState extends State<DishDetailScreen> {
                 onTap: () {
                   Navigator.pop(context);
                 },
-                color: kWhiteColor,
+                color: DefaultColors.whiteColor,
                 padding: const EdgeInsets.all(10),
                 radius: 15,
                 child: const Icon(
                   Icons.arrow_back_ios_rounded,
-                  color: kBlackColor,
+                  color: DefaultColors.blackColor,
                 ),
               ),
             ),
@@ -467,7 +467,7 @@ class _DishDetailsState extends State<DishDetailScreen> {
               const EdgeInsets.only(left: 15, right: 15, top: 25, bottom: 50),
           child: Container(
             decoration: BoxDecoration(
-              color: kWhiteColor,
+              color: DefaultColors.whiteColor,
               borderRadius: BorderRadius.circular(15),
               boxShadow: const [
                 BoxShadow(
@@ -486,7 +486,7 @@ class _DishDetailsState extends State<DishDetailScreen> {
                 progressIndicatorBuilder: (context, url, downloadProgress) =>
                     Center(
                   child: CircularProgressIndicator(
-                      color: kPrimaryColor, value: downloadProgress.progress),
+                      color: DefaultColors.primaryColor, value: downloadProgress.progress),
                 ),
                 errorWidget: (context, url, error) => const Icon(Icons.error),
               ),

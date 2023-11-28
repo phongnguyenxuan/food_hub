@@ -5,8 +5,8 @@ import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:food_hub/configs/constant_varible.dart';
-import 'package:food_hub/configs/style.dart';
 import 'package:food_hub/router/app_router.gr.dart';
+import 'package:style/default_color.dart';
 
 import '../controller/api_controller.dart';
 import '../controller/login_controller.dart';
@@ -42,7 +42,7 @@ class _SplashScreenState extends ConsumerState<SplashScreen> {
         Future.delayed(const Duration(milliseconds: 2500)).then((value) {
           FirebaseMessaging.instance.getInitialMessage().then((value) {
             if (value != null) {
-             router.replace(const NotificationRoute());
+              router.replace(const NotificationRoute());
             } else {
               router.replace(const SwitchSiginRoute());
             }
@@ -57,9 +57,9 @@ class _SplashScreenState extends ConsumerState<SplashScreen> {
     return AnnotatedRegion<SystemUiOverlayStyle>(
       value: const SystemUiOverlayStyle(
           statusBarColor: Colors.transparent,
-          systemNavigationBarColor: kPrimaryColor),
+          systemNavigationBarColor: DefaultColors.primaryColor),
       child: Scaffold(
-        backgroundColor: kPrimaryColor,
+        backgroundColor: DefaultColors.primaryColor,
         body: Center(
           child: AnimatedOpacity(
             opacity: _showAnimation ? 1 : 0,

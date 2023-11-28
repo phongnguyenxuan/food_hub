@@ -8,11 +8,11 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:food_hub/configs/style.dart';
 import 'package:food_hub/controller/language_controller.dart';
 import 'package:food_hub/firebase_options.dart';
 import 'package:food_hub/router/app_router.dart';
 import 'package:food_hub/services/firebase_message.dart';
+import 'package:style/default_color.dart';
 import 'configs/basic_config.dart';
 import 'configs/constant_varible.dart';
 import 'generated/l10n.dart';
@@ -46,7 +46,7 @@ void configLoading() {
     ..indicatorSize = 45.0
     ..radius = 10.0
     ..backgroundColor = Colors.transparent
-    ..indicatorColor = kPrimaryColor
+    ..indicatorColor = DefaultColors.primaryColor
     ..textColor = Colors.transparent
     ..boxShadow = <BoxShadow>[]
     ..maskColor = Colors.transparent

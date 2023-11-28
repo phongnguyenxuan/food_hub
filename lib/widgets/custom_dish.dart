@@ -3,8 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:food_hub/configs/constant_varible.dart';
-
-import '../configs/style.dart';
+import 'package:style/default_color.dart';
 import '../custom_icons_icons.dart';
 
 class CustomDishWidget extends ConsumerWidget {
@@ -54,7 +53,7 @@ class CustomDishWidget extends ConsumerWidget {
                         progressIndicatorBuilder:
                             (context, url, downloadProgress) => Center(
                           child: CircularProgressIndicator(
-                              color: kPrimaryColor,
+                              color: DefaultColors.primaryColor,
                               value: downloadProgress.progress),
                         ),
                         errorWidget: (context, url, error) =>
@@ -77,7 +76,7 @@ class CustomDishWidget extends ConsumerWidget {
                           const EdgeInsets.symmetric(horizontal: 10, vertical: 9),
                       margin: const EdgeInsets.only(bottom: 10, left: 10),
                       decoration: BoxDecoration(
-                          color: kWhiteColor,
+                          color: DefaultColors.whiteColor,
                           borderRadius: BorderRadius.circular(100),
                           boxShadow: const [
                             BoxShadow(
@@ -96,7 +95,7 @@ class CustomDishWidget extends ConsumerWidget {
                             style: TextStyle(
                                 fontSize: 11.69.sp,
                                 fontFamily: fontFamily,
-                                color: kTextBlackColor,
+                                color: DefaultColors.textBlackColor,
                                 fontWeight: FontWeight.w600),
                           ),
                           Padding(
@@ -104,7 +103,7 @@ class CustomDishWidget extends ConsumerWidget {
                                 horizontal: 4.2, vertical: 1),
                             child: Icon(
                               CustomIcons.star,
-                              color: kYellowColor,
+                              color: DefaultColors.yellowColor,
                               size: 11.69.sp,
                             ),
                           ),
@@ -150,7 +149,7 @@ class CustomDishWidget extends ConsumerWidget {
                   text: TextSpan(
                       text: '\$',
                       style: const TextStyle(
-                        color: kPrimaryColor,
+                        color: DefaultColors.primaryColor,
                         fontSize: 18,
                         fontFamily: fontFamily,
                         fontWeight: FontWeight.w600,
@@ -160,7 +159,7 @@ class CustomDishWidget extends ConsumerWidget {
                         TextSpan(
                           text: price.toString(),
                           style: const TextStyle(
-                            color: kBlackColor,
+                            color: DefaultColors.blackColor,
                             fontSize: 18,
                             fontFamily: fontFamily,
                             fontWeight: FontWeight.w600,

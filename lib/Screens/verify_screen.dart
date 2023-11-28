@@ -5,7 +5,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:food_hub/configs/constant_varible.dart';
-import 'package:food_hub/configs/style.dart';
 import 'package:food_hub/controller/api_controller.dart';
 import 'package:food_hub/controller/auth_controller.dart';
 import 'package:food_hub/controller/switch_method_controller.dart';
@@ -13,6 +12,8 @@ import 'package:food_hub/models/user/user_model.dart';
 import 'package:food_hub/router/app_router.gr.dart';
 import 'package:food_hub/widgets/custom_button.dart';
 import 'package:pinput/pinput.dart';
+import 'package:style/default_color.dart';
+import 'package:style/default_text_style.dart';
 
 import '../controller/login_controller.dart';
 
@@ -78,10 +79,10 @@ class _VerifyScreenState extends ConsumerState<VerifyScreen> {
   Scaffold apiVerifi(BuildContext context) {
     UserModel? userModel = ref.watch(userController);
     return Scaffold(
-      backgroundColor: kWhiteColor,
+      backgroundColor: DefaultColors.whiteColor,
       appBar: AppBar(
         automaticallyImplyLeading: false,
-        backgroundColor: kWhiteColor,
+        backgroundColor: DefaultColors.whiteColor,
         elevation: 0,
         flexibleSpace: Stack(
           children: [
@@ -109,12 +110,12 @@ class _VerifyScreenState extends ConsumerState<VerifyScreen> {
             child: RichText(
               text: TextSpan(
                 text: "Verification Code",
-                style: titleTextStyle,
+                style: DefaultTextStyles.titleTextStyle,
                 children: [
                   TextSpan(
                       text:
                           "\nPlease type the verification code sent to\n${userModel?.email}",
-                      style: k14fontsizeW400grey),
+                      style: DefaultTextStyles.k14fontsizeW400grey),
                 ],
               ),
             ),
@@ -129,60 +130,64 @@ class _VerifyScreenState extends ConsumerState<VerifyScreen> {
                 controller: pinController,
                 pinAnimationType: PinAnimationType.slide,
                 onCompleted: (value) {
-                  ref.read(apiControlProvider.notifier).verification(code: value, context: context);
+                  ref
+                      .read(apiControlProvider.notifier)
+                      .verification(code: value, context: context);
                 },
                 cursor: Container(
                   width: 1.5,
                   height: 22,
-                  color: kYellowColor,
+                  color: DefaultColors.yellowColor,
                 ),
                 focusedPinTheme: PinTheme(
                     height: 65,
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(14),
-                        border: Border.all(width: 1, color: kPrimaryColor))),
+                        border: Border.all(
+                            width: 1, color: DefaultColors.primaryColor))),
                 defaultPinTheme: PinTheme(
                     height: 65,
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(14),
                         border: Border.all(
-                            width: 1, color: kBoderTextFieldDefault))),
+                            width: 1, color: DefaultColors.boderTextFieldDefault))),
               ),
             ),
           ),
           Center(
             child: RichText(
-              textAlign: TextAlign.center,
+                textAlign: TextAlign.center,
                 text: TextSpan(
                     text: "I don’t recevie a code! ",
-                    style: k16W500ColorFF5B5B5EStyle,
+                    style: DefaultTextStyles.k16W500ColorFF5B5B5EStyle,
                     children: [
-                  TextSpan(
-                      recognizer: TapGestureRecognizer()
-                        ..onTap = _isVisib
-                            ? () async {
-                                await ref
-                                    .read(apiControlProvider.notifier)
-                                    .sendVerification(email: userModel!.email)
-                                    .then((value) {
-                                  timer = Timer.periodic(
-                                      const Duration(seconds: 1), (timer) {
-                                    setState(() {
-                                      count--;
-                                      _isVisib = false;
-                                      if(count == 0) {
-                                        timer.cancel();
-                                        count = 60;
-                                        _isVisib = true;
-                                      }
+                      TextSpan(
+                          recognizer: TapGestureRecognizer()
+                            ..onTap = _isVisib
+                                ? () async {
+                                    await ref
+                                        .read(apiControlProvider.notifier)
+                                        .sendVerification(
+                                            email: userModel!.email)
+                                        .then((value) {
+                                      timer = Timer.periodic(
+                                          const Duration(seconds: 1), (timer) {
+                                        setState(() {
+                                          count--;
+                                          _isVisib = false;
+                                          if (count == 0) {
+                                            timer.cancel();
+                                            count = 60;
+                                            _isVisib = true;
+                                          }
+                                        });
+                                      });
                                     });
-                                  });
-                                });
-                              }
-                            : null,
-                      text: _isVisib ? "Please resend" : "Retry in $count",
-                      style: k16W500PrimaryColorStyle)
-                ])),
+                                  }
+                                : null,
+                          text: _isVisib ? "Please resend" : "Retry in $count",
+                          style: DefaultTextStyles.k16W500PrimaryColorStyle)
+                    ])),
           )
         ],
       ),
@@ -191,10 +196,10 @@ class _VerifyScreenState extends ConsumerState<VerifyScreen> {
 
   Scaffold firebaseVerifi(BuildContext context) {
     return Scaffold(
-      backgroundColor: kWhiteColor,
+      backgroundColor: DefaultColors.whiteColor,
       appBar: AppBar(
         automaticallyImplyLeading: false,
-        backgroundColor: kWhiteColor,
+        backgroundColor: DefaultColors.whiteColor,
         elevation: 0,
         flexibleSpace: Stack(
           children: [
@@ -220,7 +225,7 @@ class _VerifyScreenState extends ConsumerState<VerifyScreen> {
             Icon(
               Icons.mark_email_unread_rounded,
               size: 100.sp,
-              color: kPrimaryColor,
+              color: DefaultColors.primaryColor,
             ),
             SizedBox(
               height: 10.h,
@@ -230,7 +235,7 @@ class _VerifyScreenState extends ConsumerState<VerifyScreen> {
               style: TextStyle(
                   fontFamily: fontFamily,
                   fontSize: 25.sp,
-                  color: kPrimaryColor,
+                  color: DefaultColors.primaryColor,
                   fontWeight: FontWeight.w600),
             ),
             SizedBox(
@@ -242,7 +247,7 @@ class _VerifyScreenState extends ConsumerState<VerifyScreen> {
                 text: 'Please click on the link ',
                 style: TextStyle(
                     fontSize: 15.sp,
-                    color: kBlackColor,
+                    color: DefaultColors.blackColor,
                     fontFamily: fontFamily,
                     fontWeight: FontWeight.w700),
                 children: <TextSpan>[
@@ -251,7 +256,7 @@ class _VerifyScreenState extends ConsumerState<VerifyScreen> {
                           'in the email we just sent you to confirm your email.',
                       style: TextStyle(
                           fontSize: 15.sp,
-                          color: kBlackColor,
+                          color: DefaultColors.blackColor,
                           fontFamily: fontFamily,
                           fontWeight: FontWeight.w400)),
                 ],
@@ -281,8 +286,8 @@ class _VerifyScreenState extends ConsumerState<VerifyScreen> {
               padding: EdgeInsets.symmetric(vertical: 20.h),
               // margin: EdgeInsets.symmetric(vertical: 50.h, horizontal: 15.w),
               radius: 30,
-              color: kWhiteColor,
-              borderColor: kPrimaryColor,
+              color: DefaultColors.whiteColor,
+              borderColor: DefaultColors.primaryColor,
               child: Center(
                 child: Text(
                   "Back to login",
@@ -290,7 +295,7 @@ class _VerifyScreenState extends ConsumerState<VerifyScreen> {
                       fontFamily: fontFamily,
                       fontSize: 15.sp,
                       letterSpacing: 1.2.sp,
-                      color: kPrimaryColor),
+                      color: DefaultColors.primaryColor),
                 ),
               ),
             )

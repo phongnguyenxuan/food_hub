@@ -49,6 +49,6 @@ abstract class APIService {
   @GET(restaurantDetailPath)
   Future<RestaurantModel?>getRestaurantDetail(String id);
 
- @GET(distDetailPath)
+  @GET(distDetailPath)
   Future<DishModel?>getDishDetail(String id);
 }

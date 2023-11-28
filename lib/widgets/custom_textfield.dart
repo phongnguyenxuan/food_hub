@@ -1,19 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:food_hub/configs/constant_varible.dart';
-import 'package:food_hub/configs/style.dart';
 import 'package:food_hub/custom_icons_icons.dart';
+import 'package:style/default_color.dart';
+import 'package:style/default_text_style.dart';
 
 class CustomTextField extends StatefulWidget {
   const CustomTextField(
       {super.key,
-       this.title,
-       this.padding,
+      this.title,
+      this.padding,
       this.hintText,
       this.haveSurffixIcon = false,
       required this.controller,
       this.error,
-      this.formKey, this.textInputType});
+      this.formKey,
+      this.textInputType});
   final String? title;
   final String? hintText;
   final EdgeInsets? padding;
@@ -29,7 +31,7 @@ class CustomTextField extends StatefulWidget {
 
 class _CustomTextFieldState extends State<CustomTextField> {
   bool _isObscure = false;
-  
+
   @override
   Widget build(BuildContext context) {
     return Form(
@@ -38,18 +40,20 @@ class _CustomTextFieldState extends State<CustomTextField> {
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisSize: MainAxisSize.min,
         children: [
-         widget.title != null ? Padding(
-            padding: EdgeInsets.only(bottom: 12.h),
-            child: Text(
-              widget.title!,
-              style: titleTextFieldStyle,
-            ),
-          ) : Container(),
+          widget.title != null
+              ? Padding(
+                  padding: EdgeInsets.only(bottom: 12.h),
+                  child: Text(
+                    widget.title!,
+                    style: DefaultTextStyles.titleTextFieldStyle,
+                  ),
+                )
+              : Container(),
           //TextField
           TextFormField(
             controller: widget.controller,
             obscureText: _isObscure,
-            cursorColor: kPrimaryColor,
+            cursorColor: DefaultColors.primaryColor,
             keyboardType: widget.textInputType,
             validator: (value) {
               if (value == null || value.isEmpty) {
@@ -84,32 +88,31 @@ class _CustomTextFieldState extends State<CustomTextField> {
                       child: Icon(
                         CustomIcons.eye,
                         size: 15.sp,
-                        color: kSurffixColor,
+                        color: DefaultColors.surffixColor,
                       ),
                     )
                   : null,
-              hintStyle: hintTextStyle,
+              hintStyle: DefaultTextStyles.hintTextStyle,
               border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(10),
-                  borderSide: const BorderSide(
-                      width: 1, color: kPrimaryColor)),
+                  borderSide: const BorderSide(width: 1, color: DefaultColors.primaryColor)),
               disabledBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(10),
                   borderSide: const BorderSide(
-                      width: 1, color: kBoderTextFieldDefault)),
+                      width: 1, color: DefaultColors.boderTextFieldDefault)),
               errorBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(10),
                   borderSide: const BorderSide(width: 1, color: Colors.red)),
               enabledBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(10),
                   borderSide: const BorderSide(
-                      width: 1, color: kBoderTextFieldDefault)),
+                      width: 1, color: DefaultColors.boderTextFieldDefault)),
               focusedBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(10),
-                  borderSide: const BorderSide(width: 1, color: kPrimaryColor)),
+                  borderSide: const BorderSide(width: 1, color: DefaultColors.primaryColor)),
               focusedErrorBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(10),
-                  borderSide: const BorderSide(width: 1, color: kPrimaryColor)),
+                  borderSide: const BorderSide(width: 1, color: DefaultColors.primaryColor)),
             ),
           )
         ],

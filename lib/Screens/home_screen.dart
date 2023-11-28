@@ -3,17 +3,17 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:food_hub/configs/constant_varible.dart';
-import 'package:food_hub/configs/style.dart';
 import 'package:food_hub/models/food_hub/categories_model.dart';
 import 'package:food_hub/models/food_hub/restaurants_model.dart';
 import 'package:food_hub/widgets/custom_button.dart';
 import 'package:food_hub/widgets/custom_category_widget.dart';
 import 'package:food_hub/widgets/custom_featured_widget.dart';
+import 'package:style/default_color.dart';
+import 'package:style/default_text_style.dart';
 
 import '../controller/api_controller.dart';
 import '../models/user/user_model.dart';
 import '../widgets/search_bar.dart';
-
 
 @RoutePage()
 class HomeScreen extends ConsumerStatefulWidget {
@@ -32,7 +32,6 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
     super.initState();
   }
 
-
   @override
   Widget build(BuildContext context) {
     UserModel? userModel = ref.watch(userController);
@@ -44,119 +43,121 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
         if (userModel == null) {
           return const Center(
             child: CircularProgressIndicator(
-              color: kPrimaryColor,
+              color: DefaultColors.primaryColor,
             ),
           );
         }
         return SingleChildScrollView(
-            physics: const BouncingScrollPhysics(),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Padding(
-                  padding: const EdgeInsets.only(left: 25, top: 30),
-                  child: Text(
-                    whatWould,
-                    style: titleHomeTextStyle,
-                  ),
+          physics: const BouncingScrollPhysics(),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const Padding(
+                padding: EdgeInsets.only(left: 25, top: 30),
+                child: Text(
+                  whatWould,
+                  style: DefaultTextStyles.titleHomeTextStyle,
                 ),
-                SizedBox(height: 19.h),
-                Row(
+              ),
+              SizedBox(height: 19.h),
+              Row(
+                children: [
+                  const Expanded(
+                    child: Padding(
+                      padding: EdgeInsets.only(left: 25),
+                      child: CustomSearchBar(),
+                    ),
+                  ),
+                  SizedBox(
+                    width: 18.w,
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(right: 25),
+                    child: SizedBox(
+                      width: 51.w,
+                      child: CustomButton(
+                          shadowColor: DefaultColors.greyShadowColor,
+                          elevation: 2,
+                          padding: const EdgeInsets.all(15),
+                          color: DefaultColors.whiteColor,
+                          radius: 14,
+                          child: Image.asset(switchAssetsPath)),
+                    ),
+                  )
+                ],
+              ),
+
+              //category
+              SizedBox(
+                height: 30.h,
+              ),
+              SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                physics: const BouncingScrollPhysics(),
+                child: Row(
+                  children: List<Widget>.generate(listCate!.length, (index) {
+                    return CustomCategoryWidget(
+                        onPressed: () {
+                          setState(() {
+                            selectedIndex = index;
+                          });
+                        },
+                        backgroundColor: selectedIndex == index
+                            ? DefaultColors.primaryColor
+                            : DefaultColors.whiteColor,
+                        shadowColor: selectedIndex == index
+                            ? DefaultColors.orangeShadowColor
+                            : DefaultColors.whiteShadowColor,
+                        textColor: selectedIndex == index
+                            ? DefaultColors.whiteColor
+                            : DefaultColors.blackCateColor,
+                        imagePath: listCate[index].imageUrl,
+                        title: listCate[index].categoryName);
+                  }),
+                ),
+              ),
+              SizedBox(
+                height: 28.h,
+              ),
+              Padding(
+                padding: const EdgeInsets.only(left: 25),
+                child: Row(
                   children: [
-                    const Expanded(
-                      child: Padding(
-                        padding: EdgeInsets.only(left: 25),
-                        child: CustomSearchBar(),
-                      ),
+                    const Text(
+                      "Featured Restaurants",
+                      style: DefaultTextStyles.titleHomeStyle,
                     ),
-                    SizedBox(
-                      width: 18.w,
-                    ),
+                    const Spacer(),
                     Padding(
-                      padding: const EdgeInsets.only(right: 25),
-                      child: SizedBox(
-                        width: 51.w,
-                        child: CustomButton(
-                            shadowColor: kGreyShadowColor,
-                            elevation: 2,
-                            padding: const EdgeInsets.all(15),
-                            color: kWhiteColor,
-                            radius: 14,
-                            child: Image.asset(switchAssetsPath)),
-                      ),
-                    )
+                      padding: const EdgeInsets.only(right: 32),
+                      child: TextButton(
+                          onPressed: () {},
+                          child: const Text(
+                            "View All >",
+                            style: DefaultTextStyles.viewAllStyle,
+                          )),
+                    ),
                   ],
                 ),
-
-                //category
-                SizedBox(
-                  height: 30.h,
-                ),
-                SingleChildScrollView(
-                  scrollDirection: Axis.horizontal,
-                  physics: const BouncingScrollPhysics(),
-                  child: Row(
-                    children: List<Widget>.generate(listCate!.length, (index) {
-                      return CustomCategoryWidget(
-                          onPressed: () {
-                            setState(() {
-                              selectedIndex = index;
-                            });
-                          },
-                          backgroundColor: selectedIndex == index
-                              ? kPrimaryColor
-                              : kWhiteColor,
-                          shadowColor: selectedIndex == index
-                              ? kOrangeShadowColor
-                              : kWhiteShadowColor,
-                          textColor: selectedIndex == index
-                              ? kWhiteColor
-                              : kBlackCateColor,
-                          imagePath: listCate[index].imageUrl,
-                          title: listCate[index].categoryName);
-                    }),
+              ),
+              SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                physics: const BouncingScrollPhysics(),
+                child: Row(
+                  children: List<Widget>.generate(
+                    listRes!.length,
+                    (index) {
+                      return CustomFeaturedWidget(
+                        restaurantsModel: listRes[index],
+                      );
+                    },
                   ),
                 ),
-                SizedBox(
-                  height: 28.h,
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(left: 25),
-                  child: Row(
-                    children: [
-                      Text(
-                        "Featured Restaurants",
-                        style: titleHomeStyle,
-                      ),
-                      const Spacer(),
-                      Padding(
-                        padding: const EdgeInsets.only(right: 32),
-                        child: TextButton(
-                            onPressed: () {},
-                            child: Text(
-                              "View All >",
-                              style: viewAllStyle,
-                            )),
-                      ),
-                    ],
-                  ),
-                ),
-                SingleChildScrollView(
-                  scrollDirection: Axis.horizontal,
-                  physics: const BouncingScrollPhysics(),
-                  child: Row(
-                    children: List<Widget>.generate(
-                      listRes!.length,
-                      (index) {
-                        return  CustomFeaturedWidget(restaurantsModel: listRes[index],);
-                      },
-                    ),
-                  ),
-                ),
-              ],
-            ),
-          );
+              ),
+            ],
+          ),
+        );
       },
     );
   }

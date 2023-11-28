@@ -41,6 +41,8 @@ dependencies:
   firebase_analytics: ^10.7.1
   url_launcher: ^6.2.1
   package_info_plus: ^4.2.0
+  style:
+    path: style
 
 dev_dependencies:
   flutter_test:
@@ -66,16 +68,16 @@ flutter:
   uses-material-design: true
   assets:
     - assets/images/
-  fonts:
-    - family: SofiaPro
-      fonts:
-        - asset: assets/fonts/SofiaProRegular.otf
-        - asset: assets/fonts/SofiaProBold.otf
-          weight: 700
-        - asset: assets/fonts/SofiaProExtraLight.otf
-          weight: 200
-    - family: CustomIcons
-      fonts:
-        - asset: assets/fonts/CustomIcons.ttf
+  # fonts:
+  #   - family: SofiaPro
+  #     fonts:
+  #       - asset: assets/fonts/SofiaProRegular.otf
+  #       - asset: assets/fonts/SofiaProBold.otf
+  #         weight: 700
+  #       - asset: assets/fonts/SofiaProExtraLight.otf
+  #         weight: 200
+  #   - family: CustomIcons
+  #     fonts:
+  #       - asset: assets/fonts/CustomIcons.ttf
 flutter_intl:
   enabled: true
